@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon data scraper",
+  "version": "1.0",
+  "icons": {
+    "16": "./icons/amazon16.png",
+    "48": "./icons/amazon48.png",
+    "128": "./icons/amazon128.png"
+  },
+  "description": "Scrape product data.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.com/*", "https://*.amazon.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
